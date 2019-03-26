@@ -24,11 +24,16 @@ class TestLibrary < MiniTest::Test
     assert_equal("dune", @test_library.get_book_from_title("dune")[:title])
   end
 
-  def test_add_rental_details 
+  def test_add_rental_details
     @test_library.add_book("dune")
     @test_library.add_rental_details("dune", "calum", "26/03/19")
     assert_equal("calum", @test_library.get_rental_information("dune")[:student_name])
     assert_equal("26/03/19", @test_library.get_rental_information("dune")[:date])
+  end
+
+  def test_get_rental_information_fail
+    result = @test_library.get_rental_information("fifty shades of grey")
+    assert_equal( nil, result)
   end
 
 end

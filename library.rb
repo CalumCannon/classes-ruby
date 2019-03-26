@@ -28,10 +28,7 @@ class Library
         },
 
         ]
-
   end
-
-
 
   def get_book_from_title(title)
 
@@ -47,7 +44,7 @@ class Library
   end
 
   def get_rental_information(title)
-    return get_book_from_title(title)[:rental_details]
+    return get_book_from_title(title)[:rental_details] if get_book_from_title(title) != nil
   end
 
   def add_book(name)

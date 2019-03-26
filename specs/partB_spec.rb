@@ -10,7 +10,6 @@ class TestSportsTeam < MiniTest::Test
 
   def test_get_team_name
     assert_equal("Celtic", @test_team.team_name)
-
   end
 
   def test_change_coach
